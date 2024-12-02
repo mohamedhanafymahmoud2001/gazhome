@@ -29,32 +29,36 @@ class _Home extends State<Home> {
         backgroundColor: colorApp.colorbody,
         body: Consumer<Control>(builder: (context, val, child) {
           return Container(
-            child: Column(
-              children: [
-                Container(
-                    alignment: Alignment.center,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                      alignment: Alignment.center,
+                      width: double.infinity,
+                      height: 200,
+                      child: Image.asset("assets/images/panner.png")),
+                  Container(
                     width: double.infinity,
-                    height: 200,
-                    child: Image.asset("assets/images/panner.png")),
-                Container(
-                  width: double.infinity,
-                  height: 60,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 1,
-                    itemBuilder: (context, i) {
-                      return BottonHome(
-                          title: "اسطوانات الغاز",
-                          color: colorApp.colorbgbutton2,
-                          colorfont: colorApp.colorbgbutton1,
-                          func: () {});
-                    },
+                    height: 60,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 1,
+                      itemBuilder: (context, i) {
+                        return BottonHome(
+                            title: "اسطوانات الغاز",
+                            color: colorApp.colorbgbutton2,
+                            colorfont: colorApp.colorbgbutton1,
+                            func: () {});
+                      },
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
+                  Container(
+                    width: double.infinity,
                     padding: EdgeInsets.all(3),
                     child: GridView.builder(
+                      
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2, // Number of columns
                           crossAxisSpacing: 10, // Space between columns
@@ -67,8 +71,8 @@ class _Home extends State<Home> {
                           return Prodect();
                         }),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         }),

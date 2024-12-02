@@ -222,7 +222,18 @@ class BodyMyOrders extends StatelessWidget {
                 Expanded(
                   child: BottonApp(
                       width: double.infinity,
-                      title: "حذف الطلبية",
+                      title: "رفض الطلبية",
+                      color: colorApp.colorbgbutton2,
+                      func: () {
+                        bottomSheetApp.rejectOrder(context);
+                      }),
+                ),SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  child: BottonApp(
+                      width: double.infinity,
+                      title: "عدم التوصيل",
                       color: colorApp.colorbgbutton2,
                       func: () {
                         bottomSheetApp.deletOrder(context);

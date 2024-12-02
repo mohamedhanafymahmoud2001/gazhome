@@ -17,14 +17,7 @@ class _SupportDriver extends State<SupportDriver> {
   Widget build(BuildContext context) {
     ColorApp colorApp = new ColorApp();
     DialogApp dialogApp = new DialogApp();
-    return Scaffold(
-      appBar: AppBar(
-          automaticallyImplyLeading: false,
-        title: AppBarApp(),
-        backgroundColor: colorApp.colorbody,
-      ),
-      backgroundColor: colorApp.colorbody,
-      body: Container(
+    return  Container(
         child: Column(
           children: [
             Container(
@@ -82,8 +75,6 @@ class _SupportDriver extends State<SupportDriver> {
                 title: "اتصال", color: colorApp.colorbgbutton2, func: () {})
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBarAppDriver(),
-    );
+      );
   }
 }

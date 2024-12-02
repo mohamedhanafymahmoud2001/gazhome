@@ -5,6 +5,8 @@ import 'package:gazhome/componanet/dialogapp.dart';
 import 'package:gazhome/componanet/inputapp.dart';
 import 'package:gazhome/provider/prov.dart';
 import 'package:gazhome/view/home/home.dart';
+import 'package:gazhome/viewdriver/mainappdriver.dart';
+import 'package:gazhome/viewdriver/reservOrder/reservOrder.dart';
 import 'package:provider/provider.dart';
 
 class SignIn extends StatelessWidget {
@@ -50,8 +52,16 @@ class SignIn extends StatelessWidget {
                 func: () {
                   dialogApp.checkdialog(context, () {
                     print("home");
+                    //user 
+
+                    // Navigator.of(context).pushAndRemoveUntil(
+                    //   MaterialPageRoute(builder: (context) => Home()),
+                    //   (Route<dynamic> route) => false,
+                    // );
+                    
+                    //driver 
                     Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute(builder: (context) => Home()),
+                      MaterialPageRoute(builder: (context) => MainAppDriver()),
                       (Route<dynamic> route) => false,
                     );
                   }, 'تم بنجاح', true);

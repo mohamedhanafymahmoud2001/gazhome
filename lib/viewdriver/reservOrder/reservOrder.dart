@@ -18,15 +18,10 @@ class ReservOrder extends StatefulWidget {
 class _ReservOrder extends State {
   ColorApp colorApp = new ColorApp();
   DialogApp dialogApp = new DialogApp();
+  List area=["جدة","الرياض","مكة"];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: AppBarApp(),
-        backgroundColor: colorApp.colorbody,
-      ),
-      backgroundColor: colorApp.colorbody,
-      body: Consumer<Control>(builder: (context, val, child) {
+    return  Consumer<Control>(builder: (context, val, child) {
         return Column(
           children: [
             Container(
@@ -34,18 +29,20 @@ class _ReservOrder extends State {
               width: double.infinity,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 3,
+                  itemCount: area.length,
                   itemBuilder: (context, i) {
                     return BottonRservOrder(
-                      title: "جدة",
-                      color: i == 0
+                      title: "${area[i]}",
+                      color: i == val.area
                           ? colorApp.colorbgbuttonapp
                           : colorApp.colorbgbutton1,
-                      colorfont: i == 0
+                      colorfont: i == val.area
                           ? colorApp.colorFontwhite
                           : colorApp.colorFontblack,
-                      func: () {},
-                      active: i == 0 ? false : true,
+                      func: () {
+                        val.changeAreaDriver(i);
+                      },
+                      active: i == val.area ? false : true,
                     );
                   }),
             ),
@@ -56,9 +53,5 @@ class _ReservOrder extends State {
                       return BodyReservOrder();
                     })),
           ],
-        );
-      }),
-      bottomNavigationBar: BottomNavigationBarAppDriver(),
-    );
-  }
+        );});}
 }

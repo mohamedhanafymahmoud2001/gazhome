@@ -113,4 +113,58 @@ class BottomSheetApp {
           );
         });
   }
+  rejectOrder(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            width: double.infinity,
+            height: 300,
+            child: Column(
+              children: [
+                Expanded(child: Container()),
+                Container(
+                  child: Text(
+                    "تاكيد عدم استلام العميل الطلبية",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: colorApp.colorFontblue),
+                  ),
+                ),
+                Expanded(child: Container()),
+                Container(
+                  child: Text(
+                    "هل رفض العميل استلام الطلبية",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: colorApp.colorFontblack),
+                  ),
+                ),
+                Expanded(child: Container()),
+                Container(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      BottonApp(
+                          title: "رجوع",
+                          color: colorApp.colorbgbutton2,
+                          func: () {},
+                          width: 150),
+                      BottonApp(
+                          title: "نعم",
+                          color: colorApp.colorbgbutton2,
+                          func: () {},
+                          width: 150)
+                    ],
+                  ),
+                ),
+                Expanded(child: Container()),
+              ],
+            ),
+          );
+        });
+  }
 }

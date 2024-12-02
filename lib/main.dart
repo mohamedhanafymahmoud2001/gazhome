@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:gazhome/provider/prov.dart';
 import 'package:gazhome/view/account/acount.dart';
@@ -14,9 +13,12 @@ import 'package:gazhome/view/cart/detailsorder.dart';
 import 'package:gazhome/view/home/home.dart';
 import 'package:gazhome/view/location/completlocation.dart';
 import 'package:gazhome/view/location/location.dart';
+import 'package:gazhome/view/notific/notificat.dart';
+import 'package:gazhome/view/onboarding/board.dart';
 import 'package:gazhome/view/onboarding/langoage.dart';
 import 'package:gazhome/view/suport/suport.dart';
 import 'package:gazhome/viewdriver/account/account.dart';
+import 'package:gazhome/viewdriver/mainappdriver.dart';
 import 'package:gazhome/viewdriver/myorder/myorder.dart';
 import 'package:gazhome/viewdriver/reservOrder/reservOrder.dart';
 import 'package:gazhome/viewdriver/supportdriver/supportdriver.dart';
@@ -36,12 +38,11 @@ void main() async {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
-  ]).then((_) {
-    runApp(MyApp());
-  });
-  // runApp(const MyApp());
-}
-
+    ]).then((_) {
+      runApp(MyApp());
+    });
+    // runApp(const MyApp());
+  }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
@@ -71,8 +72,11 @@ class MyApp extends StatelessWidget {
           'myorders': (context) => MyOrders(),
           'accountdriver': (context) => AccountDriver(),
           'supportdriver': (context) => SupportDriver(),
+          'notification': (context) => Notificat(),
+          'board': (context) => Board(),
+          'mainappdriver': (context) => MainAppDriver(),
         },
-        home: MyOrders(),
+        home: Board(),
       ),
     );
   }

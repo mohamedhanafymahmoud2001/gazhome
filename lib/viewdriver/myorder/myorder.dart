@@ -19,13 +19,7 @@ class _MyOrders extends State {
   DialogApp dialogApp = new DialogApp();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: AppBarApp(),
-        backgroundColor: colorApp.colorbody,
-      ),
-      backgroundColor: colorApp.colorbody,
-      body: Consumer<Control>(builder: (context, val, child) {
+    return  Consumer<Control>(builder: (context, val, child) {
         return Column(
           children: [
             
@@ -37,8 +31,6 @@ class _MyOrders extends State {
                     })),
           ],
         );
-      }),
-      bottomNavigationBar: BottomNavigationBarAppDriver(),
-    );
+      });
   }
 }

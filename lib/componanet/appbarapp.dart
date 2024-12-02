@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gazhome/componanet/colors.dart';
+import 'package:gazhome/provider/prov.dart';
+import 'package:provider/provider.dart';
 
 class AppBarBack extends StatelessWidget {
   ColorApp colorApp = new ColorApp();
@@ -62,5 +64,34 @@ class AppBarApp extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+class AppBarAppDriver extends StatelessWidget {
+  ColorApp colorApp = new ColorApp();
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<Control>(builder: (context, val, child) {
+        return  Row(
+      children: [
+        Container(
+            height: 25,
+            width: 120,
+            child: Image.asset("assets/images/gazar.png")),
+        Expanded(child: SizedBox()),
+        
+        Container(
+          margin: EdgeInsets.all(5),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: colorApp.colorborder, width: 1)),
+          child: TextButton(
+            onPressed: () {
+              val.changenavbardriver(1);
+            },
+            child: Text("A"),
+          ),
+        ),
+      ],
+    );});
   }
 }

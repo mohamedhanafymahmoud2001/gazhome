@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ColorApp {
   Color colorbody = Colors.white;
+  Color colorfontboard = const Color.fromARGB(255, 183, 36, 70);
   Color colorgreyapp = Colors.grey;
   Color colorFontblack = Colors.black;
   Color colorFontblue = Colors.blue;

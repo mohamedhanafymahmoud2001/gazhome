@@ -83,7 +83,7 @@ class BottonApp extends StatelessWidget {
               ),
               child: Text(
                 "$title",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12  ),
               ),
             ),
           ),

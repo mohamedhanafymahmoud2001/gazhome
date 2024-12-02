@@ -45,8 +45,12 @@ class BottomNavigationBarAppDriver extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<Control>(builder: (context, val, child) {
       return BottomNavigationBar(
-          onTap: (value) {},
-          currentIndex: 1,
+          onTap: (value) {
+         
+              val.changenavbardriver(value);
+            
+          },
+          currentIndex: val.ScreenDriver,
           backgroundColor: colorApp.colorbody,
           selectedItemColor: colorApp.colorbgbutton2,
           useLegacyColorScheme: false,
